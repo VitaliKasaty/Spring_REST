@@ -3,7 +3,7 @@ package com.kasatyvitali.spring.rest.configuration;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 //класс-аналог web.xml
-public class MyWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer{
+public class MyWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
