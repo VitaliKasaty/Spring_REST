@@ -41,25 +41,5 @@ public class MyRESTController {
 		} 
 		return employee;		
 	}
-	
-	//обработка исключения, если введёного id работника не существует
-	@ExceptionHandler
-	public ResponseEntity<EmployeeIncorrectData> handleException(
-			NoSuchEmployeeException exception) {
-		EmployeeIncorrectData data = new EmployeeIncorrectData();
-		data.setInfo(exception.getMessage());
-		
-		return new ResponseEntity<>(data, HttpStatus.NOT_FOUND);
-	}
-	
-	//Перегрузка метода. Обработка всех остальных исключений
-	@ExceptionHandler
-	public ResponseEntity<EmployeeIncorrectData> handleException(
-			Exception exception) {
-		EmployeeIncorrectData data = new EmployeeIncorrectData();
-		data.setInfo(exception.getMessage());
-		
-		return new ResponseEntity<>(data, HttpStatus.BAD_REQUEST);
-	}
 
 }
